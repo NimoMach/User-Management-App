@@ -7,7 +7,7 @@
 ## Project Overview
 
 ### Live Demo
-[link text](https://nimomach.github.io/User-Management-App/)
+[User-Management-App-Link](https://nimomach.github.io/User-Management-App/)
 
 ### Screenshots
 <img width="600" height="600" alt="Screenshot 2025-09-23 150546" src="https://github.com/user-attachments/assets/aef4a75c-2365-46a8-9a2b-e71aebdd1ca8" />
