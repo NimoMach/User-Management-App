@@ -20,7 +20,7 @@ const UserPage = () => {
 
   const fetchUsers = async () => {
     try {
-      const { data } = await axios.get("http://localhost:5000/api/users", {
+      const { data } = await axios.get("https://user-management-app-sjwn.onrender.com/api/users", {
         params: { page, limit, search, sort, order, ...filters },
       });
       setUsers(data.users);
@@ -37,7 +37,7 @@ const UserPage = () => {
 
   const handleAdd = async user => {
     try {
-      await axios.post("http://localhost:5000/api/users", user);
+      await axios.post("https://user-management-app-sjwn.onrender.com/api/users", user);
       fetchUsers();
     } catch {
       setError("Failed to add user.");
@@ -46,7 +46,7 @@ const UserPage = () => {
 
   const handleEdit = async user => {
     try {
-      await axios.put(`http://localhost:5000/api/users/${user.id}`, user);
+      await axios.put(`https://user-management-app-sjwn.onrender.com/api/users/${user.id}`, user);
       setEditingUser(null);
       fetchUsers();
     } catch {
@@ -56,7 +56,7 @@ const UserPage = () => {
 
   const handleDelete = async id => {
     try {
-      await axios.delete(`http://localhost:5000/api/users/${id}`);
+      await axios.delete(`https://user-management-app-sjwn.onrender.com/api/users/${id}`);
       fetchUsers();
     } catch {
       setError("Failed to delete user.");
