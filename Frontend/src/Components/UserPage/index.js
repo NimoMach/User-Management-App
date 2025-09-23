@@ -17,10 +17,11 @@ const UserPage = () => {
   const [editingUser, setEditingUser] = useState(null);
   const [showFilter, setShowFilter] = useState(false);
   const [error, setError] = useState("");
+  const API_URL = process.env.REACT_APP_API_URL;
 
   const fetchUsers = async () => {
     try {
-      const { data } = await axios.get("https://user-management-app-sjwn.onrender.com/api/users", {
+      const { data } = await axios.get(`${API_URL}/users`, {
         params: { page, limit, search, sort, order, ...filters },
       });
       setUsers(data.users);
@@ -37,7 +38,7 @@ const UserPage = () => {
 
   const handleAdd = async user => {
     try {
-      await axios.post("https://user-management-app-sjwn.onrender.com/api/users", user);
+      await axios.post(`${API_URL}/users`, user);
       fetchUsers();
     } catch {
       setError("Failed to add user.");
@@ -46,7 +47,7 @@ const UserPage = () => {
 
   const handleEdit = async user => {
     try {
-      await axios.put(`https://user-management-app-sjwn.onrender.com/api/users/${user.id}`, user);
+      await axios.put(`${API_URL}/users/${user.id}`, user);
       setEditingUser(null);
       fetchUsers();
     } catch {
@@ -56,7 +57,7 @@ const UserPage = () => {
 
   const handleDelete = async id => {
     try {
-      await axios.delete(`https://user-management-app-sjwn.onrender.com/api/users/${id}`);
+      await axios.delete(`${API_URL}/users/${id}`);
       fetchUsers();
     } catch {
       setError("Failed to delete user.");
