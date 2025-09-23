@@ -10,7 +10,7 @@
 [User-Management-App-Link](https://nimomach.github.io/User-Management-App/)
 
 ### Screenshots
-<img width="600" height="600" alt="Screenshot 2025-09-23 150546" src="https://github.com/user-attachments/assets/aef4a75c-2365-46a8-9a2b-e71aebdd1ca8" />
+<img width="680" height="680" alt="Screenshot 2025-09-23 150546" src="https://github.com/user-attachments/assets/d0d4215b-da62-4854-9f46-85eea24429ad" />
 
 
 
