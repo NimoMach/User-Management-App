@@ -1,0 +1,86 @@
+.user-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background: white;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  font-size: 0.95rem;
+}
+
+.user-table th,
+.user-table td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+.user-table th {
+  background: #f1f1f1;
+  cursor: pointer;
+}
+
+.user-table tr:nth-child(even) {
+  background: #fafafa;
+}
+
+.user-table button {
+  margin-right: 5px;
+  padding: 5px 8px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+.user-table button:first-child {
+  background: #ffc107;
+  color: white;
+}
+
+.user-table button:last-child {
+  background: #dc3545;
+  color: white;
+}
+
+.user-table button:hover {
+  opacity: 0.9;
+}
+
+/* Responsive table */
+@media (max-width: 768px) {
+  .user-table,
+  .user-table thead,
+  .user-table tbody,
+  .user-table th,
+  .user-table td,
+  .user-table tr {
+    display: block;
+    width: 100%;
+  }
+
+  .user-table thead {
+    display: none;
+  }
+
+  .user-table tr {
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    background: white;
+  }
+
+  .user-table td {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px;
+    border: none;
+    border-bottom: 1px solid #eee;
+  }
+
+  .user-table td::before {
+    content: attr(data-label);
+    font-weight: bold;
+    flex-basis: 40%;
+    text-align: left;
+  }
+}

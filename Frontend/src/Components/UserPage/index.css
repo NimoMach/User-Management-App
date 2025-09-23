@@ -1,0 +1,53 @@
+.user-page {
+  padding: 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.user-page input,
+.user-page select {
+  margin: 5px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.user-page button {
+  margin: 5px;
+  padding: 8px 12px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.user-page button:disabled {
+  background: #aaa;
+  cursor: not-allowed;
+}
+
+.user-page button:hover:not(:disabled) {
+  background: #0056b3;
+}
+
+.pagination {
+  margin-top: 15px;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .user-page {
+    padding: 10px;
+  }
+
+  .user-page input,
+  .user-page select,
+  .user-page button {
+    width: 100%;
+    margin: 8px 0;
+  }
+}
