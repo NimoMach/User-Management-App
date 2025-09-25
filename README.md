@@ -18,7 +18,7 @@
 
 This project is built with the **MERN Stack**:
 
-- **Render** - Deployment (used JasonPlaceholder's users data)
+- **Vercel** - Backend Deployment (used JasonPlaceholder's users data)
 - **Express.js** - Backend framework
 - **React.js** - Frontend library
 - **Node.js** - Runtime environment
