@@ -8,32 +8,43 @@ app.use(express.json());
 
 const BASE_URL = "https://jsonplaceholder.typicode.com/users";
 
-// GET Users with pagination, search, sort, filter
+// ------------------- GET USERS -------------------
 app.get("/api/users", async (req, res) => {
   try {
-    const { page = 1, limit = 10, search = "", sort = "", order = "asc", name = "", email = "", department = "" } = req.query;
+    const {
+      page = 1,
+      limit = 10,
+      search = "",
+      sort = "",
+      order = "asc",
+      name = "",
+      email = "",
+      department = "",
+    } = req.query;
+
     const { data } = await axios.get(BASE_URL);
 
-    let users = data.map(u => ({
+    let users = data.map((u) => ({
       id: u.id,
       name: u.name,
       email: u.email,
-      department: u.company?.name || "N/A"
+      department: u.company?.name || "N/A",
     }));
 
     // search
     if (search) {
       users = users.filter(
-        u =>
+        (u) =>
           u.name.toLowerCase().includes(search.toLowerCase()) ||
           u.email.toLowerCase().includes(search.toLowerCase())
       );
     }
 
     // filters
-    if (name) users = users.filter(u => u.name.toLowerCase().includes(name.toLowerCase()));
-    if (email) users = users.filter(u => u.email.toLowerCase().includes(email.toLowerCase()));
-    if (department) users = users.filter(u => u.department.toLowerCase().includes(department.toLowerCase()));
+    if (name) users = users.filter((u) => u.name.toLowerCase().includes(name.toLowerCase()));
+    if (email) users = users.filter((u) => u.email.toLowerCase().includes(email.toLowerCase()));
+    if (department)
+      users = users.filter((u) => u.department.toLowerCase().includes(department.toLowerCase()));
 
     // sort
     if (sort) {
@@ -54,7 +65,7 @@ app.get("/api/users", async (req, res) => {
   }
 });
 
-// Add User
+// ------------------- ADD USER -------------------
 app.post("/api/users", async (req, res) => {
   try {
     const { data } = await axios.post(BASE_URL, req.body);
@@ -64,7 +75,7 @@ app.post("/api/users", async (req, res) => {
   }
 });
 
-// Edit User
+// ------------------- EDIT USER -------------------
 app.put("/api/users/:id", async (req, res) => {
   try {
     const { data } = await axios.put(`${BASE_URL}/${req.params.id}`, req.body);
@@ -74,7 +85,7 @@ app.put("/api/users/:id", async (req, res) => {
   }
 });
 
-// Delete User
+// ------------------- DELETE USER -------------------
 app.delete("/api/users/:id", async (req, res) => {
   try {
     await axios.delete(`${BASE_URL}/${req.params.id}`);
@@ -84,5 +95,5 @@ app.delete("/api/users/:id", async (req, res) => {
   }
 });
 
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+// Export for Vercel
+export default app;
