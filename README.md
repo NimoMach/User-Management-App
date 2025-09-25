@@ -31,12 +31,12 @@ This project is built with the **MERN Stack**:
 User-Management/
 ├── backend/                 # Express server and database setup
 ├── frontend/                # React front-end code
-├── public/                  # Static assets
-├── src/                     # Main source files for React components
-├── .gitignore               # Files and directories to be ignored by Git
-├── README.md                # Project documentation
-├── package-lock.json        # Dependency lock file
-└── package.json             # Project metadata and scripts
+    ├── public/                  # Static assets
+    ├── src/                     # Main source files for React components
+    ├── .gitignore               # Files and directories to be ignored by Git
+    ├── README.md                # Project documentation
+    ├── package-lock.json        # Dependency lock file
+    └── package.json             # Project metadata and scripts
 ```
 
 ## Features
